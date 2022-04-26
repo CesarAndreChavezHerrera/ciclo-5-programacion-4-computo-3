@@ -1,0 +1,16 @@
+
+lista de empresa que usan node js
+
+1 netflix
+2 uber
+3 walmart
+4 NASA
+5 ebay
+6 Medium
+7 Paypal
+8 trello
+9 Godaddy
+10 Capital One
+
+
+hoting de node https://blog.back4app.com/es/las-10-principales-empresas-de-alojamiento-de-node-js/
