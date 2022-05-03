@@ -10,19 +10,11 @@ axios.get('https://api.coindesk.com/v1/bpi/currentprice.json')
         var datos = response.data.bpi
         var tipo_monera = ["EUR","USD","GBP"] // clasificacion de monera
         var valores = []
-        
+        // ordena los datos 
         tipo_monera.forEach(monera =>{
             var linea = monera + ": "+ datos[monera].rate.toString()
             valores.push(linea)
         })
-        /*
-        esta parte no funciona 
-        response.data.forEach(bit => {
-            console.log(`${bit['code']}, ${bit['rate']}`);
-        });
-        */
-
-       //console.log(datos[lista_valores[0]])
 
        console.log("valor actual del bitcoinds")
        valores.forEach(v =>console.log(v))
