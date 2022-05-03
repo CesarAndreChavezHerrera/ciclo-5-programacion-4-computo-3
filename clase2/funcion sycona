@@ -1,0 +1,19 @@
+function fFirst(){
+    console.log("Primera Funcion");
+}
+
+function sSecond(callback){
+    setTimeout(()  => {
+        console.log("Segunda Funcion");
+        callback()
+        sThird()
+    },5);
+}
+
+function sThird(){
+    console.log("Tercera Funcion");
+}
+
+fFirst();
+sSecond(sThird);
+//sThird();
