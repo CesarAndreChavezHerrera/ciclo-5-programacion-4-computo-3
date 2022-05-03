@@ -12,10 +12,20 @@ axios.get('https://api.coindesk.com/v1/bpi/currentprice.json')
         var valores = []
         // ordena los datos 
         tipo_monera.forEach(monera =>{
-            var linea = monera + ": "+ datos[monera].rate.toString()
+            var linea = " "+ monera + ": "+ datos[monera].rate.toString()
             valores.push(linea)
         })
+        
+        var salida = ["valor actual del bitcoinds \n"]
+       console.log(salida[0])
+       
+       valores.forEach(v =>{
+           console.log(v)
+            salida.push(v.toString()+"\n") 
+        })
 
-       console.log("valor actual del bitcoinds")
-       valores.forEach(v =>console.log(v))
+
+       fs.writeFile("precio bitcoinds.txt",salida,(errores)=>{
+           console.log(errores)
+       })
     })

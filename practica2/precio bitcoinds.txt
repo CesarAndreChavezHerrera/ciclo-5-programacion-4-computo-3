@@ -1,0 +1,4 @@
+valor actual del bitcoinds 
+ EUR: 35,926.3420
+ USD: 37,714.5392
+ GBP: 30,137.3111
