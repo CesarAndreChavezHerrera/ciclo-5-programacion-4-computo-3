@@ -4,10 +4,10 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
-
+var mongoose = require('mongoose')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-
+const methods = require("./methods")
 var app = express();
 
 // view engine setup
@@ -22,6 +22,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
+//inyectarel usuario
+
+app.use((req,res,next)=>{
+  const authToken = req.cookies['AuthToken']
+  req.user = methods.authTokens[authToken]
+  next()
+})
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
@@ -29,6 +37,21 @@ app.use('/users', usersRouter);
 app.use(function(req, res, next) {
   next(createError(404));
 });
+
+
+
+/// conecion a mongo
+mongoose.connect(
+  'mongodb://localhost:27017/exampleDB',
+  {
+      useNewUrlParser:true,
+      useUnifiedTopology:true
+  }
+  )
+  .then(
+      () =>
+      console.log('se ha establecido la conexion'))
+  .catch(e => console.log('error de conexion',e))
 
 // error handler
 app.use(function(err, req, res, next) {

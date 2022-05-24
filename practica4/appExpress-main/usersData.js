@@ -24,5 +24,10 @@ const data = [
  fullname:'c1', 
  email:'c1', 
  password:'1HNeOiZeFu7gP1lxi5tdAwGcB9i2xR+Q2jpmbuwTqzU=' 
+ }, 
+ { 
+ fullname:'c', 
+ email:'1', 
+ password:'a4ayc/80/OGda4BO/1o/V0etpOqiLx1JwB5S3beHW0s=' 
  } ]; 
  module.exports = { data }
