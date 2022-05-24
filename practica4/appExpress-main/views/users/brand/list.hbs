@@ -1,0 +1,42 @@
+
+<h1>{{viewTitle}}</h1>
+<a href="/brand">New brands</a>
+<thead>
+    <table>
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            description
+        </th>
+        <th>
+            editar
+        </th>
+        <th>
+            eliminar
+        </th>
+    </tr>
+    <tbody>
+    {{#each list}}
+        <tr>
+            <td>
+                {{this.name}}
+            </td>
+            <td>
+                {{this.description}}
+            </td>
+            <td>
+                <a href="/brand/{{this._id}}">Ediar</a>
+                
+            </td>
+            <td>
+                <a href="/brand/delete/{{this._id}}" onclick="return confirm('esta seguro de que desea eliminar el registro')" >
+                eliminar
+                </a>
+            </td>
+        </tr>
+    {{/each}}
+    </tbody>
+    </table>
+</thead>
